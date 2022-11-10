@@ -1,0 +1,4 @@
+go test fuzz v1
+float32(-90.94858)
+float32(5.4397683)
+int(19)

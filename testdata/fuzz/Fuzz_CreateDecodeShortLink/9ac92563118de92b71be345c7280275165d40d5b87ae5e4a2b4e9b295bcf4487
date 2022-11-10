@@ -1,0 +1,4 @@
+go test fuzz v1
+float32(0)
+float32(-6.375)
+int(0)
