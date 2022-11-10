@@ -29,10 +29,10 @@ func CreateOSMShortLinkString(latitude float32, longitude float32, zoom int) (st
 	if zoom < 0 || zoom > 20 {
 		return "", fmt.Errorf("invalid zoom %d", zoom)
 	}
-	if latitude <= -90 || latitude >= 90 {
+	if latitude < -90 || latitude >= 90 {
 		return "", fmt.Errorf("invalid latitude %v", latitude)
 	}
-	if longitude <= -180 || longitude >= 180 {
+	if longitude < -180 || longitude >= 180 {
 		return "", fmt.Errorf("invalid longitude %v", longitude)
 	}
 	lat := uint32((latitude + 90) / 180 * (1 << 32))

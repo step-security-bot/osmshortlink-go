@@ -67,11 +67,15 @@ func Test_interleaveBits(t *testing.T) {
 func Fuzz_CreateDecodeShortLink(f *testing.F) {
 	f.Add(float32(0), float32(0), 0)
 	f.Add(float32(0), float32(0), 1)
+	f.Add(float32(-90), float32(0), 15)
+	f.Add(float32(90), float32(0), 15)
+	f.Add(float32(0), float32(-180), 15)
+	f.Add(float32(0), float32(180), 15)
 	f.Add(float32(46.05141922831535), float32(14.506048858165741), 19)
 
 	f.Fuzz(func(t *testing.T, origLat, origLon float32, origZoom int) {
 		enc, encErr := CreateOSMShortLinkString(origLat, origLon, origZoom)
-		if origLat >= 90 || origLat <= -90 || origLon >= 180 || origLon <= -180 || origZoom > 20 || origZoom < 0 {
+		if origLat >= 90 || origLat < -90 || origLon >= 180 || origLon < -180 || origZoom > 20 || origZoom < 0 {
 			if encErr == nil {
 				t.Error("missing an encode error")
 			}
