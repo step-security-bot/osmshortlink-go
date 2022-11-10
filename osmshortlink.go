@@ -16,16 +16,17 @@ const (
 // in Table 1 of RFC 2045.
 var intToBase64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_~"
 
-func CreateOSMShortLinkFull(latitude float32, longitude float32, zoom int) (string, error) {
-	s, err := CreateOSMShortLinkString(latitude, longitude, zoom)
+// Create a short link to OSM map with marker at he given position and zoom
+func Create(latitude float32, longitude float32, zoom int) (string, error) {
+	s, err := Encode(latitude, longitude, zoom)
 	if err != nil {
 		return "", err
 	}
 	return BASE_SHORT_OSM_URL + s + "?m", nil
 }
 
-// createShortLinkStringgiven a location and zoom, return a short string representing it.
-func CreateOSMShortLinkString(latitude float32, longitude float32, zoom int) (string, error) {
+// Encode a location and zoom, return a short string representing it.
+func Encode(latitude float32, longitude float32, zoom int) (string, error) {
 	if zoom < 0 || zoom > 20 {
 		return "", fmt.Errorf("invalid zoom %d", zoom)
 	}
@@ -60,7 +61,7 @@ func interleaveBits(x uint32, y uint32) uint64 {
 	return c
 }
 
-func DecodeShortLinkString(s string) (float64, float64, int, error) {
+func Decode(s string) (float64, float64, int, error) {
 	if len(s) < 1 {
 		return 0, 0, 0, fmt.Errorf("invalid osm short link string %q", s)
 	}

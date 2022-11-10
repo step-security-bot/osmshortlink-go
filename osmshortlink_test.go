@@ -26,7 +26,7 @@ func Test_CreateOSMShortLinkFull(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got, err := CreateOSMShortLinkFull(tt.args.latitude, tt.args.longitude, tt.args.zoom); got != tt.want {
+			if got, err := Create(tt.args.latitude, tt.args.longitude, tt.args.zoom); got != tt.want {
 				t.Errorf("Encode() = %v, want %v", got, tt.want)
 				if err != nil {
 					t.Errorf("Error: %v", err)
@@ -74,7 +74,7 @@ func Fuzz_CreateDecodeShortLink(f *testing.F) {
 	f.Add(float32(46.05141922831535), float32(14.506048858165741), 19)
 
 	f.Fuzz(func(t *testing.T, origLat, origLon float32, origZoom int) {
-		enc, encErr := CreateOSMShortLinkString(origLat, origLon, origZoom)
+		enc, encErr := Encode(origLat, origLon, origZoom)
 		if origLat >= 90 || origLat < -90 || origLon >= 180 || origLon < -180 || origZoom > 20 || origZoom < 0 {
 			if encErr == nil {
 				t.Error("missing an encode error")
@@ -85,7 +85,7 @@ func Fuzz_CreateDecodeShortLink(f *testing.F) {
 			// return
 		}
 
-		decLat, decLon, decZoom, decErr := DecodeShortLinkString(enc)
+		decLat, decLon, decZoom, decErr := Decode(enc)
 		if encErr != nil && decErr == nil {
 			t.Errorf("missing a deocode error after %v", encErr)
 		}
@@ -146,7 +146,7 @@ func Test_CreateOSMShortLinkString(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got, err := CreateOSMShortLinkString(tt.args.latitude, tt.args.longitude, tt.args.zoom); got != tt.want {
+			if got, err := Encode(tt.args.latitude, tt.args.longitude, tt.args.zoom); got != tt.want {
 				t.Errorf("CreateOSMShortLinkString() = %v, want %v", got, tt.want)
 				if err != nil {
 					t.Errorf("Error: %v", err)
@@ -183,7 +183,7 @@ func TestDecodeShortLinkString(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, got1, got2, err := DecodeShortLinkString(tt.args.s)
+			got, got1, got2, err := Decode(tt.args.s)
 			if err != nil {
 				t.Errorf("DecodeShortLinkString() got error %v", err)
 			}
