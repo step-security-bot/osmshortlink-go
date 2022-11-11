@@ -1,7 +1,26 @@
-# osmshortlink-go: Generate and parse OpenStreetMap shortlinks
+# osmshortlink-go: Create, encode & decode OpenStreetMap shortlinks
 
 [![Test](https://github.com/stefanb/osmshortlink-go/actions/workflows/test.yml/badge.svg)](https://github.com/stefanb/osmshortlink-go/actions/workflows/test.yml)
 [![golangci-lint](https://github.com/stefanb/osmshortlink-go/actions/workflows/golangci-lint.yml/badge.svg)](https://github.com/stefanb/osmshortlink-go/actions/workflows/golangci-lint.yml)
 [![CodeQL](https://github.com/stefanb/osmshortlink-go/actions/workflows/codeql.yml/badge.svg)](https://github.com/stefanb/osmshortlink-go/actions/workflows/codeql.yml)
 
 Specification: https://wiki.openstreetmap.org/wiki/Shortlink
+
+## Usage
+
+### Creating a link
+
+```go
+package main
+import "github.com/stefanb/osmshortlink-go"
+
+func main() {
+    shortlink, err := osmshortlink.Create(46.05141, 14.50604, 17)
+    if err != nil {
+        fmt.Println(err)
+    }
+    fmt.Println(shortlink)
+}
+```
+
+Prints: https://osm.org/go/0Ik3VNr_A-?m
