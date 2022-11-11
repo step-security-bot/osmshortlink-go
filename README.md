@@ -17,10 +17,10 @@ import "github.com/stefanb/osmshortlink-go"
 func main() {
     shortlink, err := osmshortlink.Create(46.05141, 14.50604, 17)
     if err != nil {
-        fmt.Println(err)
+        panic(err)
     }
     fmt.Println(shortlink)
 }
 ```
 
-Prints: https://osm.org/go/0Ik3VNr_A-?m
+Prints: [`https://osm.org/go/0Ik3VNr_A-?m`](https://osm.org/go/0Ik3VNr_A-?m)
