@@ -3,6 +3,7 @@
 [![Test](https://github.com/stefanb/osmshortlink-go/actions/workflows/test.yml/badge.svg)](https://github.com/stefanb/osmshortlink-go/actions/workflows/test.yml)
 [![golangci-lint](https://github.com/stefanb/osmshortlink-go/actions/workflows/golangci-lint.yml/badge.svg)](https://github.com/stefanb/osmshortlink-go/actions/workflows/golangci-lint.yml)
 [![CodeQL](https://github.com/stefanb/osmshortlink-go/actions/workflows/codeql.yml/badge.svg)](https://github.com/stefanb/osmshortlink-go/actions/workflows/codeql.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/stefanb/osmshortlink-go.svg)](https://pkg.go.dev/github.com/stefanb/osmshortlink-go)
 
 Specification: https://wiki.openstreetmap.org/wiki/Shortlink
 
