@@ -12,13 +12,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go: [ 'stable', 'oldstable' ]
     steps:
       - uses: actions/checkout@v3
 
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
-          go-version: 1.18
+          go-version: ${{ matrix.go }}
 
       - name: Test
         run: go test -v ./...
