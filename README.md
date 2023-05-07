@@ -28,11 +28,13 @@ Prints: [`https://osm.org/go/0Ik3VNr_A-?m`](https://osm.org/go/0Ik3VNr_A-?m)
 
 ### Command-line tool
 
+You can download pre-built binaries for various platforms from [latest release](https://github.com/stefanb/osmshortlink-go/releases/latest).
+
 ```bash
 Usage: osmshortlink [latitude] [longitude] [zoom]
 ```
 
-eg:
+For example:
 
 ```bash
 $ osmshortlink 46.05141 14.50604 17
