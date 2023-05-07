@@ -7,9 +7,9 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
         # Override automatic language detection by changing the below list
         # Supported options are ['csharp', 'cpp', 'go', 'java', 'javascript', 'python']
         # TODO: Enable for javascript later
-        language: [ 'go']
+        language: ["go"]
 
     steps:
       - name: Checkout repository
