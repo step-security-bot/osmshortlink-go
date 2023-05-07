@@ -9,7 +9,7 @@ Specification: https://wiki.openstreetmap.org/wiki/Shortlink
 
 ## Usage
 
-### Creating a link
+### Creating a link in Go
 
 ```go
 package main
@@ -25,3 +25,16 @@ func main() {
 ```
 
 Prints: [`https://osm.org/go/0Ik3VNr_A-?m`](https://osm.org/go/0Ik3VNr_A-?m)
+
+### Command-line tool
+
+```bash
+Usage: osmshortlink [latitude] [longitude] [zoom]
+```
+
+eg:
+
+```bash
+$ osmshortlink 46.05141 14.50604 17
+https://osm.org/go/0Ik3VNr_A-?m
+```
