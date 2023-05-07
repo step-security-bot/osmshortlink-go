@@ -1,9 +1,11 @@
 # osmshortlink-go: Go module and command-line tool for creating, encoding & decoding of OpenStreetMap shortlinks
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/stefanb/osmshortlink-go.svg)](https://pkg.go.dev/github.com/stefanb/osmshortlink-go)
 [![Test](https://github.com/stefanb/osmshortlink-go/actions/workflows/test.yml/badge.svg)](https://github.com/stefanb/osmshortlink-go/actions/workflows/test.yml)
 [![golangci-lint](https://github.com/stefanb/osmshortlink-go/actions/workflows/golangci-lint.yml/badge.svg)](https://github.com/stefanb/osmshortlink-go/actions/workflows/golangci-lint.yml)
 [![CodeQL](https://github.com/stefanb/osmshortlink-go/actions/workflows/codeql.yml/badge.svg)](https://github.com/stefanb/osmshortlink-go/actions/workflows/codeql.yml)
-[![Go Reference](https://pkg.go.dev/badge/github.com/stefanb/osmshortlink-go.svg)](https://pkg.go.dev/github.com/stefanb/osmshortlink-go)
+[![Go Report Card](https://goreportcard.com/badge/github.com/stefanb/osmshortlink-go)](https://goreportcard.com/report/github.com/stefanb/osmshortlink-go)
+[![codebeat badge](https://codebeat.co/badges/0dcfa9c5-a59b-46ed-b0a6-30e1bbda9a7e)](https://codebeat.co/projects/github-com-stefanb-osmshortlink-go-main)
 
 Specification: https://wiki.openstreetmap.org/wiki/Shortlink
 
