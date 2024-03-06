@@ -17,18 +17,25 @@ Specification: https://wiki.openstreetmap.org/wiki/Shortlink
 
 ```go
 package main
-import "github.com/stefanb/osmshortlink-go"
+
+import (
+	"fmt"
+
+	"github.com/stefanb/osmshortlink-go"
+)
 
 func main() {
-    shortlink, err := osmshortlink.Create(46.05141, 14.50604, 17)
-    if err != nil {
-        panic(err)
-    }
-    fmt.Println(shortlink)
+	shortlink, err := osmshortlink.Create(46.05141, 14.50604, 17)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(shortlink)
 }
 ```
 
 Prints: [`https://osm.org/go/0Ik3VNr_A-?m`](https://osm.org/go/0Ik3VNr_A-?m)
+
+[Try it in Go playground](https://go.dev/play/p/xFQrtmFwMPa)
 
 ### Command-line tool
 
