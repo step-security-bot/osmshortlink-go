@@ -35,6 +35,15 @@ Prints: [`https://osm.org/go/0Ik3VNr_A-?m`](https://osm.org/go/0Ik3VNr_A-?m)
 
 ### Command-line tool
 
+#### Run using Go
+
+````bash
+$ go run github.com/stefanb/osmshortlink-go/cmd@main 46.05141 14.50604 17
+https://osm.org/go/0Ik3VNr_A-?m
+````
+
+#### Pre-built binaries
+
 You can download pre-built binaries for various platforms from [latest release](https://github.com/stefanb/osmshortlink-go/releases/latest).
 
 ```bash
